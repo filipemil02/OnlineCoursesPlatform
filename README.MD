@@ -2,7 +2,7 @@
 
 ## Description
 
-A brief description of what this project does and who it's for.
+This is a simple online courses platform where you can login, register and buy courses. The platform is built using React, Redux, Node.js, Express and MongoDB.
 
 ## Installation
 
@@ -13,9 +13,9 @@ cd OnlineCoursesPlatform
 npm install
 ```
 
-##Running the project
+## Running the project
 
 ```bash
 npm start
 ```
-Go to http://localhost:3000 on your browser
+Go to http://localhost:3000/pages/home/home.html on your browser
