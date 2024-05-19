@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./courses.css">
+    
+    <title class="titlu">Our Courses</title>
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+        .dynamic-content {
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="page-wrapper">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Online Courses</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home/home.html" id="home">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Despre
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a class="dropdown-item" href="desprenoi.html" id="about-us">Despre Noi</a>
+                        <a class="dropdown-item" href="contact.html" id="contact-nav">Contact</a>
+                        <a class="dropdown-item" href="faq.html" id="faq-nav">Întrebări Frecvente</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../courses/courses.html" id="courses">View Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/login.html" id="login-nav">Login / Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="logout-nav" style="display: none;">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../my-account/my-account.html" id="account-nav" style="display: none;">My account</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Căutare" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Căutare</button>
+            </form>
+        </div>
+    </nav>
+<header>
+    <div class="container">
+        <h1> Our Courses</h1>
+    </div>
+</header>
+
+<div class="container">
+    <script>
+        let userId;
+        let boughtCourses = [];
+        let isLoggedIn = localStorage.getItem('loggedIn') === 'true'; // Check if the user is logged in
+
+        (async function() {
+            if (isLoggedIn) {
+                const response = await fetch('/getUser');
+                const data = await response.json();
+                if (data.success) {
+                    userId = data.userId;
+                } else {
+                    console.error('Failed to get user');
+                }
+                try {
+                    const coursesResponse = await fetch(`/getBoughtCourses?userId=${encodeURIComponent(userId)}`);
+                    const coursesData = await coursesResponse.json();
+                    boughtCourses = coursesData.courses;
+                } catch (error) {
+                    console.error('Failed to get bought courses:', error);
+                }
+            }
+
+            fetch('../../Databases/Courses.json')
+            .then(response => response.json())
+            .then(data => {
+                // Get the container element
+                const container = document.querySelector('.container');
+
+                // Loop through each category
+                data.courses.forEach(category => {
+                    // Create a section for the category
+                    const section = document.createElement('section');
+
+                    // Create a h2 for the category title
+                    const h2 = document.createElement('h2');
+                    h2.textContent = `${category.category}`;
+                    section.appendChild(h2);
+
+                    // Loop through each course in the category
+                    category.courses.forEach(course => {
+                        // Create a div for the course
+                        const div = document.createElement('div');
+                        div.className = 'course';
+
+                        // Create a h3 for the course title
+                        const h3 = document.createElement('h3');
+                        h3.textContent = course.title;
+                        div.appendChild(h3);
+
+                        // Create a p for each detail of the course
+                        const description = document.createElement('p');
+                        description.innerHTML = `<strong>Description:</strong> ${course.description}`;
+                        div.appendChild(description);
+
+                        const duration = document.createElement('p');
+                        duration.innerHTML = `<strong>Duration:</strong> ${course.duration}`;
+                        div.appendChild(duration);
+
+                        const price = document.createElement('p');
+                        price.innerHTML = `<strong>Price:</strong> ${course.price}`;
+                        div.appendChild(price);
+
+                        const format = document.createElement('p');
+                        format.innerHTML = `<strong>Type:</strong> ${course.format}`;
+                        div.appendChild(format);
+
+                        const buttonDiv = document.createElement('div');
+                        buttonDiv.className = 'button-container';
+
+                        // Check if the user has bought the course
+                        if (isLoggedIn && boughtCourses.includes(course.id)) {
+                            const goToCourseButton = document.createElement('button');
+                            goToCourseButton.textContent = 'Go to Course';
+                            goToCourseButton.className = 'go-to-course-button';
+
+                            goToCourseButton.addEventListener('click', function() {
+                                window.location.href = "../../courses/" + course.page;
+                            });
+
+                            buttonDiv.appendChild(goToCourseButton);
+                        } else {
+                            const buyButton = document.createElement('button');
+                            buyButton.textContent = 'Buy the Course';
+                            buyButton.className = 'buy-button';
+
+                            buyButton.addEventListener('click', function() {
+                                if (isLoggedIn) {
+                                    buttonDiv.removeChild(buyButton);
+
+                                    const goToCourseButton = document.createElement('button');
+                                    goToCourseButton.textContent = 'Go to Course';
+                                    goToCourseButton.className = 'go-to-course-button';
+
+                                    goToCourseButton.addEventListener('click', function() {
+                                        window.location.href = "../../courses/" + course.page;
+                                    });
+
+                                    buttonDiv.appendChild(goToCourseButton);
+
+                                    fetch('/buyCourse', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify({
+                                            userId: userId,
+                                            courseId: course.id,
+                                        }),
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if (data.success) {
+                                            console.log('Course bought successfully');
+                                        } else {
+                                            console.error('Failed to buy course');
+                                        }
+                                    });
+                                } else {
+                                    // If the user is not logged in, redirect them to the login page
+                                    window.location.href = '../login/login.html';
+                                }
+                            });
+
+                            buttonDiv.appendChild(buyButton);
+                        }
+
+                        div.appendChild(buttonDiv);
+                        section.appendChild(div);
+                    });
+                    container.appendChild(section);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+
+        })();
+    </script>
+    <script>
+        // Check if the user is logged in
+        if (localStorage.getItem('loggedIn') === 'true') {
+            // If the user is logged in, hide the "Autentificare / Înregistrare" button
+            // and show the "Logout" button
+            document.getElementById('login-nav').style.display = 'none';
+            document.getElementById('logout-nav').style.display = 'block';
+            document.getElementById('account-nav').style.display = 'block';
+        }
+
+        // Add an event listener to the "Logout" button
+        document.getElementById('logout-nav').addEventListener('click', function(event) {
+            // Prevent the link from being followed
+            event.preventDefault();
+
+            // Log out the user
+            localStorage.setItem('loggedIn', 'false');
+
+            // Hide the "Logout" button and show the "Autentificare / Înregistrare" button
+            document.getElementById('logout-nav').style.display = 'none';
+            document.getElementById('account-nav').style.display = 'none';
+            document.getElementById('login-nav').style.display = 'block';
+
+            location.reload();
+        });
+    </script>
+</div>
+
+</div>
+</body>
+</html>

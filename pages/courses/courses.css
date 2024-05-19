@@ -1,0 +1,113 @@
+header {
+    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+h1 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h1, h2 {
+    /* color: #333; */
+    color: black;
+}
+.course {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: black;
+}
+.course h3 {
+    margin-top: 0;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.go-to-course-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.containerMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+}
+
+.navbar {
+    /* background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12); */
+    background: transparent;
+    border-bottom: 1.5px solid #000;
+}
+
+.page-wrapper {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+}
+
+.nav-link {
+    color: black;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+.navbar-brand {
+    color: #070707; 
+    font-size: 24px; 
+    font-style: italic;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn.btn-primary {
+    background-color: #d8eea7;
+    color: black;
+    border: #d8eea7;
+}
+
+.navbar-light .navbar-brand{
+    font-size: 24px;
+}

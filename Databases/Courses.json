@@ -1,0 +1,100 @@
+{
+    "courses": [
+        {
+            "category": "Programming",
+            "courses": [
+                {
+                    "id": "prog1",
+                    "title": "Introduction to Python",
+                    "description": "This course is ideal for beginners and covers the basics of programming in Python.",
+                    "duration": "6 weeks",
+                    "price": "200 RON",
+                    "format": "Online",
+                    "page": "introduction_to_python.html"
+                },
+                {
+                    "id": "prog2",
+                    "title": "Web Development with JavaScript",
+                    "description": "Learn to create interactive websites using JavaScript, HTML, and CSS.",
+                    "duration": "8 weeks",
+                    "price": "300 RON",
+                    "format": "Online",
+                    "page": "web_development_with_javascript.html"
+                },
+                {
+                    "id": "prog3",
+                    "title": "Advanced Java Programming",
+                    "description": "Course for those who have basic knowledge in Java and want to perfect their skills.",
+                    "duration": "10 weeks",
+                    "price": "400 RON",
+                    "format": "Online and Offline",
+                    "page": "advanced_java_programming.html"
+                }
+            ]
+        },
+        {
+            "category": "Foreign Language",
+            "courses": [
+                {
+                    "id": "lang1",
+                    "title": "English for Beginners",
+                    "description": "Course for those who want to learn English from scratch.",
+                    "duration": "12 weeks",
+                    "price": "250 RON",
+                    "format": "Online and Offline",
+                    "page": "english_for_beginners.html"
+                },
+                {
+                    "id": "lang2",
+                    "title": "Conversational French",
+                    "description": "Improve your French conversation skills through practical exercises.",
+                    "duration": "8 weeks",
+                    "price": "280 RON",
+                    "format": "Online",
+                    "page": "conversational_french.html"
+                },
+                {
+                    "id": "lang3",
+                    "title": "Advanced Spanish",
+                    "description": "Advanced course for those who want to master Spanish at a higher level.",
+                    "duration": "10 weeks",
+                    "price": "350 RON",
+                    "format": "Online and Offline",
+                    "page": "advanced_spanish.html"
+                }
+            ]
+        },
+        {
+            "category": "Personal Development",
+            "courses": [
+                {
+                    "id": "devp1",
+                    "title": "Time Management Techniques",
+                    "description": "Learn how to manage your time effectively to achieve your goals.",
+                    "duration": "4 weeks",
+                    "price": "150 RON",
+                    "format": "Online",
+                    "page": "time_management_techniques.html"
+                },
+                {
+                    "id": "devp2",
+                    "title": "Public Speaking",
+                    "description": "Course designed to help you become a confident and effective public speaker.",
+                    "duration": "6 weeks",
+                    "price": "200 RON",
+                    "format": "Online and Offline",
+                    "page": "public_speaking.html"
+                },
+                {
+                    "id": "devp3",
+                    "title": "Leadership and Management",
+                    "description": "Develop your leadership and management skills to become an effective leader.",
+                    "duration": "8 weeks",
+                    "price": "300 RON",
+                    "format": "Online and Offline",
+                    "page": "leadership_and_management.html"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+}
+
+
+.nav-link {
+    color: black;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+.navbar-brand {
+    color: #070707; 
+    font-size: 24px; 
+    font-style: italic;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn.btn-primary {
+    background-color: #d8eea7;
+    color: black;
+    border: #d8eea7;
+}

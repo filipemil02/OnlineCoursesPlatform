@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}
+
+#username {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+#email {
+    color: #28a745;
+    font-weight: bold;
+}
+
+#boughtCourses {
+    list-style-type: none;
+    padding: 0;
+}
+
+#boughtCourses li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#boughtCourses li:hover {
+    background-color: #e8e8e8;
+}
+
+#boughtCourses li::before {
+    content: "Course: ";
+    font-weight: bold;
+}
+
+
+.navbar {
+    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+    /* background: transparent; */
+    border-bottom: 1.5px solid #000;
+}
+
+
+.nav-link {
+    color: black;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+.navbar-brand {
+    color: #070707; 
+    font-size: 24px; 
+    font-style: italic;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn.btn-primary {
+    background-color: #d8eea7;
+    color: black;
+    border: #d8eea7;
+}
+
+.navbar-light .navbar-brand{
+    font-size: 24px;
+}
