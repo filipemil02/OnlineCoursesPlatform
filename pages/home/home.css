@@ -1,23 +1,25 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+
     margin: 0;
     padding: 0;
 }
 
 .navbar {
-    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+    background: #33d6ff !important;
+    border-bottom: 1.5px solid #000;
 }
 
 
 .nav-link {
-    color: black;
+    color: black !important;
     font-weight: bold;
     font-size: 18px; 
 }
 
 .navbar-brand {
-    color: #070707; 
+    color: black; 
     font-size: 24px; 
     font-style: italic;
 }
@@ -27,6 +29,19 @@ body {
 }
 
 .btn.btn-primary {
+    background-color: #d8eea7;
+    color: black;
+    border: #d8eea7;
+}
+
+.my-2 .my-sm-0{
+    /* background-color: #d8eea7; */
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+.my-2 .my-sm-0:hover{
     background-color: #d8eea7;
     color: black;
     border: #d8eea7;

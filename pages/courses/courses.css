@@ -1,5 +1,5 @@
 header {
-    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+    /* background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12); */
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -70,12 +70,12 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+    /* background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12); */
 }
 
 .navbar {
     /* background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12); */
-    background: transparent;
+    background: #33d6ff !important;
     border-bottom: 1.5px solid #000;
 }
 
@@ -83,11 +83,11 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12);
+    /* background: linear-gradient(to right top, #a1a1a1, #84b4d7, #00d1e3, #00e7a2, #a8eb12); */
 }
 
 .nav-link {
-    color: black;
+    color: black !important;
     font-weight: bold;
     font-size: 18px; 
 }
@@ -110,4 +110,17 @@ body {
 
 .navbar-light .navbar-brand{
     font-size: 24px;
+}
+
+.my-2 .my-sm-0{
+    /* background-color: #d8eea7; */
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+.my-2 .my-sm-0:hover{
+    background-color: #d8eea7;
+    color: black;
+    border: #d8eea7;
 }

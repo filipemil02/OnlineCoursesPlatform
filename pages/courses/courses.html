@@ -33,32 +33,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../home/home.html" id="home">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Despre
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <a class="dropdown-item" href="desprenoi.html" id="about-us">Despre Noi</a>
-                        <a class="dropdown-item" href="contact.html" id="contact-nav">Contact</a>
-                        <a class="dropdown-item" href="faq.html" id="faq-nav">Întrebări Frecvente</a>
-                    </div>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../courses/courses.html" id="courses">View Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../login/login.html" id="login-nav">Login / Register</a>
+                    <a class="nav-link" href="../login/login.html" id="login-nav">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="logout-nav" style="display: none;">Logout</a>
+                    <a class="nav-link" href="../register/register.html" id="register">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../my-account/my-account.html" id="account-nav" style="display: none;">My account</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="logout-nav" style="display: none;">Logout</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Căutare" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Căutare</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
@@ -212,6 +205,7 @@
             // If the user is logged in, hide the "Autentificare / Înregistrare" button
             // and show the "Logout" button
             document.getElementById('login-nav').style.display = 'none';
+            document.getElementById('register-nav').style.display = 'none';
             document.getElementById('logout-nav').style.display = 'block';
             document.getElementById('account-nav').style.display = 'block';
         }
@@ -228,6 +222,7 @@
             document.getElementById('logout-nav').style.display = 'none';
             document.getElementById('account-nav').style.display = 'none';
             document.getElementById('login-nav').style.display = 'block';
+            document.getElementById('register-nav').style.display = 'block';
 
             location.reload();
         });
